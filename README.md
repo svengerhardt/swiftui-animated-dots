@@ -88,6 +88,9 @@ The color of the dots
 Here’s how you might integrate AnimatedDotsView into an existing SwiftUI view.
 
 ```swift
+import SwiftUI
+import AnimatedDots
+
 struct LoadingView: View {
     var body: some View {
         VStack {
