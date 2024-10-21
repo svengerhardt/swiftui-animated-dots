@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Enum representing different dot animation styles.
-enum DotAnimationStyle {
+public enum DotAnimationStyle {
     case elastic
     case pulse
     case flashing
@@ -20,7 +20,7 @@ enum DotAnimationStyle {
 ///   - dotSpacing: The spacing between dots.
 ///   - animationDuration: The duration of the animation.
 ///   - dotColor: The color of the dots.
-struct AnimatedDotsView: View {
+public struct AnimatedDotsView: View {
     let dotCount: Int
     let animationStyle: DotAnimationStyle
     let dotSize: CGFloat
@@ -28,7 +28,7 @@ struct AnimatedDotsView: View {
     let animationDuration: Double
     let dotColor: Color
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: dotSpacing) {
             ForEach(0..<dotCount, id: \.self) { index in
                 SingleDotView(
