@@ -21,6 +21,7 @@ public enum DotAnimationStyle {
 ///   - animationDuration: The duration of the animation.
 ///   - dotColor: The color of the dots.
 public struct AnimatedDotsView: View {
+    
     let dotCount: Int
     let animationStyle: DotAnimationStyle
     let dotSize: CGFloat
@@ -28,6 +29,15 @@ public struct AnimatedDotsView: View {
     let animationDuration: Double
     let dotColor: Color
 
+    public init(dotCount: Int, animationStyle: DotAnimationStyle, dotSize: CGFloat, dotSpacing: CGFloat, animationDuration: Double, dotColor: Color) {
+        self.dotCount = dotCount
+        self.animationStyle = animationStyle
+        self.dotSize = dotSize
+        self.dotSpacing = dotSpacing
+        self.animationDuration = animationDuration
+        self.dotColor = dotColor
+    }
+    
     public var body: some View {
         HStack(spacing: dotSpacing) {
             ForEach(0..<dotCount, id: \.self) { index in
@@ -49,6 +59,7 @@ public struct AnimatedDotsView: View {
 ///
 /// This view handles the animation logic for a single dot based on the specified animation style.
 struct SingleDotView: View {
+    
     let index: Int
     let animationStyle: DotAnimationStyle
     let animationDuration: Double
